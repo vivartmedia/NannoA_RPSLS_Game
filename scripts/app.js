@@ -1,13 +1,13 @@
 // first page js start
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var playVsCpuButton = document.getElementById("play1v1");
     var play1v1Button = document.getElementById("playVsCpu");
 
-    playVsCpuButton.addEventListener("click", function() {
+    playVsCpuButton.addEventListener("click", function () {
         startGameVsCpu();
     });
 
-    play1v1Button.addEventListener("click", function() {
+    play1v1Button.addEventListener("click", function () {
         startGame1v1();
     });
 });
@@ -39,7 +39,6 @@ function GetData() {
         });
 }
 
-GetData();
 
 
 // getting API choice End
@@ -50,36 +49,38 @@ GetData();
 const playerText = document.querySelector("#playerText");
 const computerText = document.querySelector("#computerText");
 const resultText = document.querySelector("#resultText");
-const choiceBtns = document.querySelectorAll(".choiceImg");
+const choiceClick = document.querySelectorAll(".choiceClick");
 let player;
 let computer;
 let result;
 
-// Select all the image elements
-// const choiceImgs = document.querySelectorAll(".choiceImg");
-
-// choiceImgs.forEach(img => img.addEventListener("click", () => {
-//     // Use the 'alt' attribute of the image
-//     player = img.alt;
-//     console.log("I am clicked");
-//     computerTurn();
-//     playerText.textContent = `Player: ${player}`;
-//     computerText.textContent = `Computer: ${computer}`;
-//     resultText.textContent = checkWinner();
-// }));
 // testing--------------------------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Select all images
     var images = document.querySelectorAll(".rotatable-image");
-    
-    images.forEach(function(image) {
+
+    images.forEach(function (image) {
         var angle = 0; // Initial angle for each image
 
-        image.addEventListener("click", function() {
+        image.addEventListener("click", function () {
             angle += 360; // Increase the angle by 360 degrees
             image.style.transform = 'rotate(' + angle + 'deg)'; // Apply the rotation to the clicked image
-             console.log(image.alt);
+            console.log(image.alt);
+            player == image.alt;
+            function GetData() {
+                fetch("https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption")
+                    .then(response => response.text()) // Process the response as plain text
+                    .then(data => {
+                        console.log(data); // Log the data, which should be the word like "Rock"
+                        // You can inject this data into your program as needed
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error); // Handle any errors
+                    });
+            }
+            GetData();
+            checkWinner();
         });
     });
 });
@@ -88,33 +89,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // testing--------------------------------------------------------------------
 
-function computerTurn(){
 
-    const randNum = Math.floor(Math.random() * 3) + 1;
-
-    switch(randNum){
-      case 1:
-        computer = "ROCK";
-        break;
-      case 2:
-        computer = "PAPER";
-        break;
-      case 3:
-        computer = "SCISSORS";
-        break;
+function checkWinner() {
+    if (player == computer) {
+        console.log("Draw!");
     }
-}
-function checkWinner(){
-    if(player == computer){
-      return "Draw!";
+    else if (computer == "rock") {
+        return (player == "paper" || player == "spock") ? console.log("You Win!") : console.log("You Lose!")
     }
-    else if(computer == "ROCK"){
-      return (player == "PAPER") ? "You Win!" : "You Lose!"
+    else if (computer == "paper") {
+        return (player == "scissors") || player == "lizard" ? console.log("You Win!") : console.log("You Lose!")
     }
-    else if(computer == "PAPER"){
-      return (player == "SCISSORS") ? "You Win!" : "You Lose!"
+    else if (computer == "scissors") {
+        return (player == "rock" || player == "spock") ? console.log("You Win!") : console.log("You Lose!")
     }
-    else if(computer == "SCISSORS"){
-      return (player == "ROCK") ? "You Win!" : "You Lose!"
+    else if (computer == "lizard") {
+        return (player == "Scissors" || player == "rock") ? console.log("You Win!") : console.log("You Lose!")
+    }
+    else if (computer == "spock") {
+        return (player == "lizard" || player == "paper") ? console.log("You Win!") : console.log("You Lose!")
     }
 }
