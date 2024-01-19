@@ -66,8 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
         image.addEventListener("click", function () {
             angle += 360; // Increase the angle by 360 degrees
             image.style.transform = 'rotate(' + angle + 'deg)'; // Apply the rotation to the clicked image
-            console.log(image.alt);
-            player == image.alt;
+            
+            player = image.alt;
+            // console.log(player);
             function GetData() {
                 fetch("https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption")
                     .then(response => response.text()) // Process the response as plain text
@@ -94,19 +95,19 @@ function checkWinner() {
     if (player == computer) {
         console.log("Draw!");
     }
-    else if (computer == "rock") {
-        return (player == "paper" || player == "spock") ? console.log("You Win!") : console.log("You Lose!")
+    else if (computer == "Rock") {
+        return (player == "Paper" || player == "Spock") ? console.log("You Win!") : console.log("You Lose!")
     }
-    else if (computer == "paper") {
-        return (player == "scissors") || player == "lizard" ? console.log("You Win!") : console.log("You Lose!")
+    else if (computer == "Paper") {
+        return (player == "Scissors") || player == "Lizard" ? console.log("You Win!") : console.log("You Lose!")
     }
-    else if (computer == "scissors") {
-        return (player == "rock" || player == "spock") ? console.log("You Win!") : console.log("You Lose!")
+    else if (computer == "Scissors") {
+        return (player == "Rock" || player == "Spock") ? console.log("You Win!") : console.log("You Lose!")
     }
-    else if (computer == "lizard") {
-        return (player == "Scissors" || player == "rock") ? console.log("You Win!") : console.log("You Lose!")
+    else if (computer == "Lizard") {
+        return (player == "Scissors" || player == "Rock") ? console.log("You Win!") : console.log("You Lose!")
     }
-    else if (computer == "spock") {
-        return (player == "lizard" || player == "paper") ? console.log("You Win!") : console.log("You Lose!")
+    else if (computer == "Spock") {
+        return (player == "Lizard" || player == "Paper") ? console.log("You Win!") : console.log("You Lose!")
     }
 }
