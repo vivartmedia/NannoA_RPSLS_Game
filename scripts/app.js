@@ -27,22 +27,52 @@ function startGame1v1() {
 
 // getting API choice start
 
-function GetData() {
-    fetch("https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption")
-        .then(response => response.text()) // Process the response as plain text
-        .then(data => {
-            console.log(data); // Log the data, which should be the word like "Rock"
-            // You can inject this data into your program as needed
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error); // Handle any errors
-        });
-}
+// function GetData() {
+//     fetch("https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption")
+//         .then(response => response.text()) // Process the response as plain text
+//         .then(data => {
+//             console.log(data); // Log the data, which should be the word like "Rock"
+//             // You can inject this data into your program as needed
+//         })
+//         .catch(error => {
+//             console.error('Error fetching data:', error); // Handle any errors
+//         });
+// }
 
 
 
 // getting API choice End
 
+// implementing 3 different moeds 1 win, 3 out of 5, 4 out of 7 start
+document.addEventListener("DOMContentLoaded", function(){
+    let singlePlayBtn = document.getElementById("singlePlayBtn");
+    let bestOfFiveBtn = document.getElementById("bestOfFiveBtn");
+    let bestOfSevenBtn = document.getElementById("bestOfSevenBtn");
+
+    singlePlayBtn.addEventListener("click", function(){
+        playGame(1);
+    })
+    bestOfFiveBtn.addEventListener("click", function(){
+        playGame(5);
+    })
+    bestOfSevenBtn.addEventListener("click", function(){
+        playGame(7);
+    })
+})
+
+function playGame(totalGames){
+    resetGame();
+
+    for(let i = 0; i < totalGames; i++){
+        console.log("ia m clicked")
+    }
+}
+function resetGame(){
+
+}
+
+
+// implementing 3 different moeds 1 win, 3 out of 5, 4 out of 7 end
 
 
 
@@ -55,6 +85,9 @@ let computer;
 let result;
 
 // testing--------------------------------------------------------------------
+
+
+ 
 
 document.addEventListener("DOMContentLoaded", function () {
     // Select all images
@@ -73,15 +106,51 @@ document.addEventListener("DOMContentLoaded", function () {
                 fetch("https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption")
                     .then(response => response.text()) // Process the response as plain text
                     .then(data => {
-                        console.log(data); // Log the data, which should be the word like "Rock"
+
+                        computer =data.toLowerCase();
+                        console.log("player: " +player);
+                        console.log("CPU:    " +computer);
+                        let winner = checkWinner();
+                      let resultElement= document.getElementById("winnerResult");
+                         
+                        resultElement.textContent = winner;
+
+
+                        // console.log(computer); // Log the data, which should be the word like "Rock"
                         // You can inject this data into your program as needed
                     })
                     .catch(error => {
                         console.error('Error fetching data:', error); // Handle any errors
                     });
             }
-            GetData();
-            checkWinner();
+
+
+
+            function checkWinner() {
+  
+                if (player == computer) {
+                    return "Draw!";
+                }
+                else if (computer == "rock") {
+                    return (player == "paper" || player == "spock") ?  "You Win!" :  "You Lose!";
+                }
+                else if (computer == "paper") {
+                    return (player == "scissors") || player == "lizard" ? "You Win!" : "You Lose!"
+                }
+                else if (computer == "scissors") {
+                    return (player == "rock" || player == "spock") ? "You Win!" : "You Lose!"
+                }
+                else if (computer == "lizard") {
+                    return (player == "scissors" || player == "rock") ? "You Win!" : "You Lose!"
+                }
+                else if (computer == "spock") {
+                    return (player == "lizard" || player == "paper") ? "You Win!" : "You Lose!"
+                }
+            }
+            // console.log("player " +player);
+            // console.log("CPU " +computer);
+             GetData();
+            // checkWinner();
         });
     });
 });
@@ -91,23 +160,24 @@ document.addEventListener("DOMContentLoaded", function () {
 // testing--------------------------------------------------------------------
 
 
-function checkWinner() {
-    if (player == computer) {
-        console.log("Draw!");
-    }
-    else if (computer == "Rock") {
-        return (player == "Paper" || player == "Spock") ? console.log("You Win!") : console.log("You Lose!")
-    }
-    else if (computer == "Paper") {
-        return (player == "Scissors") || player == "Lizard" ? console.log("You Win!") : console.log("You Lose!")
-    }
-    else if (computer == "Scissors") {
-        return (player == "Rock" || player == "Spock") ? console.log("You Win!") : console.log("You Lose!")
-    }
-    else if (computer == "Lizard") {
-        return (player == "Scissors" || player == "Rock") ? console.log("You Win!") : console.log("You Lose!")
-    }
-    else if (computer == "Spock") {
-        return (player == "Lizard" || player == "Paper") ? console.log("You Win!") : console.log("You Lose!")
-    }
-}
+// function checkWinner() {
+  
+//     if (player == computer) {
+//         console.log("Draw!");
+//     }
+//     else if (computer == "Rock") {
+//         return (player == "Paper" || player == "Spock") ? console.log("You Win!") : console.log("You Lose!")
+//     }
+//     else if (computer == "Paper") {
+//         return (player == "Scissors") || player == "Lizard" ? console.log("You Win!") : console.log("You Lose!")
+//     }
+//     else if (computer == "Scissors") {
+//         return (player == "Rock" || player == "Spock") ? console.log("You Win!") : console.log("You Lose!")
+//     }
+//     else if (computer == "Lizard") {
+//         return (player == "Scissors" || player == "Rock") ? console.log("You Win!") : console.log("You Lose!")
+//     }
+//     else if (computer == "Spock") {
+//         return (player == "Lizard" || player == "Paper") ? console.log("You Win!") : console.log("You Lose!")
+//     }
+// }

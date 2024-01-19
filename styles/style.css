@@ -103,7 +103,7 @@
 }
 
 .rotatable-image:hover {
-    background: linear-gradient(to right, red, yellow);
+    /* background: linear-gradient(to right, red, yellow); */
     filter: brightness(120%);
     opacity: 0.9;
     transition: transform .5s;
@@ -123,15 +123,49 @@
     transition: transform .5s ease, opacity .0s ease;
 }
 /* Fight container Start------------------- */
-.fight {
+.secondDiv2 {
+    min-height: 70vh; 
     display: flex;
-    max-width: 100%;
+    flex-direction: column;
+    /* max-width: 100%; */
+    /* justify-content: center; */
+    flex-basis: 20%;
+    /* align-items: center; */
+
+}
+.scores3 {
+    height: 200px;
+}
+.scores3 h1{
+    font-size: 90px;
+}
+.content.last{
+    /* display: flex; */
+    /* flex-direction: row; */
+margin-top: auto;
+
+}
+.h1modesTxt{
+    /* justify-self: end; */
+}
+.modesButtons {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    flex-basis: 600%;
+}
+.modesButtons button{
+    width: 200px;
+    background-color: #7B1A9D;
+}
+.item:nth-of-type(2) {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.fight img {
-    max-width: 300px;
+button{
+    font-size: 30px;
+    width: 100px;
+    height: 50px;
 }
 
 /* Fight container End------------------- */
@@ -176,12 +210,6 @@
 
 }
 
-.scores3 h1 {
-    align-self: start;
-    width: 250px;
-    font-size: 70px;
-  
-    
-}
+
 
 /* testing my stuff here end */
