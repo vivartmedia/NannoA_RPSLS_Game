@@ -1,44 +1,187 @@
+* {
+    font-family: peralta;
+    text-align: center;
+    color: white;
+}
+
+/* Intro body Start*/
+.homeBody {
+    background-image: url(/assets/1_1_background_with_text.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.fixed-bottom {
+    margin-bottom: 60px;
+}
+
+.btn {
+    background-color: #ffe4e4;
+    font-family: peralta;
+    color: #b804ff;
+    font-size: 48px;
+    /* box-shadow: 0px 0px 8px 10px #8a038f; */
+}
+
+/* Intro body End*/
+
+
+/* Enter you Name Start*/
+.namesBody {
+    background-image: url(/assets/2_2background_with_text.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.formcontrol {
+    width: 420px;
+    height: 60px;
+    font-family: peralta;
+    font-size: 35px;
+    background-color: rgb(101, 0, 129);
+    margin-bottom: 70px;
+    border-radius: 10px;
+
+}
+
+/* Enter you Name End*/
+
+#gameDiv {
+    border: 3px solid;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: rgba(106, 5, 113, 0.43);
+}
+
+
+/* testing my stuff here start */
+.gameBody {
+    background-image: url(../assets/2_22background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* NavBar start */
 .navbar {
     background: #7B1A9D;
 }
 
-.navbar-brand{
-    color: #fff;
+.navbar-brand {
+    color: white;
+    font-size: 35px;
+    margin: 0px 20px;
+}
+
+/* NavBar End */
+
+.firstDiv {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-container {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.rotatable-image {
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    border-radius: 40%;
+    transition: transform .5s ease, opacity .0s ease;
+}
+
+.rotatable-image:hover {
+    background: linear-gradient(to right, red, yellow);
+    filter: brightness(120%);
+    opacity: 0.9;
+    transition: transform .5s;
+}
+
+.flex-container2 {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.CPU-image {
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    border-radius: 40%;
+    transition: transform .5s ease, opacity .0s ease;
+}
+/* Fight container Start------------------- */
+.fight {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    flex-basis: 600%;
+}
+
+.fight img {
+    max-width: 300px;
+}
+
+/* Fight container End------------------- */
+
+
+
+/* player's Names text Start--------- */
+.playerNames {
+    display: flex;
+    justify-content: center;
+}
+
+.playerNames h1 {
     font-family: peralta;
-    font-size:x-large;
-}
-/* Intro body */
-.homeBody{
-    background-image: url(/assets/1_background_with_text.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-
-}
-.fixed-bottom{
-    margin-bottom: 30px;
-}
-.btn{
-    background-color: #7B1A9D;
-    font-family: peralta;
-    color: #fff;
-    box-shadow: 0px 0px 8px 10px #8a038f;
+    font-size: 70px;
 }
 
+.scores1 {
+    height: 100px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 
-/* main game body */
-.gameBody{
-    background-image: url(/assets/2_background.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
 }
-.namesBody{
-    background-image: url(/assets/2_background_with_text.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+
+.scores1 h1 {
+    align-self: start;
+    font-size: 70px;
+    text-align: center;
 }
+
+.scores2 {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.scores2 h1 {
+    align-self: start;
+    font-size: 70px;
+
+}
+
+.scores3 h1 {
+    align-self: start;
+    width: 250px;
+    font-size: 70px;
+  
+    
+}
+
+/* testing my stuff here end */

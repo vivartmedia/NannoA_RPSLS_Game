@@ -1,0 +1,202 @@
+.navbar {
+    background: #7B1A9D;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-family: peralta;
+    font-size: x-large;
+}
+
+/* Intro body Start*/
+.homeBody {
+    background-image: url(/assets/1_1_background_with_text.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.fixed-bottom {
+    margin-bottom: 60px;
+}
+
+.btn {
+    background-color: #ffe4e4;
+    font-family: peralta;
+    color: #b804ff;
+    font-size: 48px;
+    /* box-shadow: 0px 0px 8px 10px #8a038f; */
+}
+
+/* Intro body End*/
+
+/* Enter you Name Start*/
+.namesBody {
+    background-image: url(/assets/2_2background_with_text.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Enter you Name End*/
+
+
+.form-control {
+    width: 420px;
+    height: 60px;
+    font-family: peralta;
+    color: rgb(254, 252, 252);
+    background-color: #b804ff;
+}
+
+
+
+/* main game body Start*/
+
+.gameBody {
+    background-image: url(../assets/2_22background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.scores {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.scores h1 {
+    font-family: peralta;
+    color: white;
+    font-size: 70px;
+    text-align: center;
+}
+
+.scores1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.scores1 h1 {
+    font-family: peralta;
+    color: white;
+    font-size: 70px;
+    text-align: center;
+}
+
+
+
+/*images start  */
+.flex-container {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-container2 {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.choiceImg img {
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    transition: transform .5s ease, opacity .1s ease;
+}
+
+.rotatable-image {
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    transition: transform .5s ease, opacity .0s ease;
+
+}
+
+.rotatable-image:hover {
+    background: linear-gradient(to right, red, yellow);
+    filter: brightness(120%);
+    opacity: 0.9;
+    transition: transform .2s;
+}
+
+.choiceImg1 img {
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    transition: transform .5s ease, opacity .1s ease;
+}
+
+.rotatable-image:nth-of-type(1) {
+    align-self: center;
+    align-self: center;
+    margin-left: 5%;
+}
+
+.rotatable-image:nth-of-type(6) {
+    align-self: center;
+    margin-right: 5%;
+}
+
+.choiceImg1:nth-of-type(1) {
+    align-self: center;
+    margin-left: 5%;
+}
+
+.choiceImg1:nth-of-type(3) {
+    align-self: center;
+    margin-left: 30%;
+}
+
+.choiceImg1:nth-of-type(4) {
+    align-self: center;
+    flex-basis: 0%;
+    margin-right: 5%;
+}
+
+
+.choiceImg:hover img {
+    border: 2px solid green;
+    opacity: 0.8;
+    transition: transform .2s;
+}
+
+.choiceImg1:hover img {
+    transform: scale(1.5);
+    opacity: 0.8;
+    transition: transform .2s;
+}
+
+.fight {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    flex-basis: 600%;
+}
+
+.fight img {
+    max-width: 300px;
+
+}
+
+.fight1 {
+    display: flex;
+    max-width: 20%;
+    justify-content: center;
+    flex-basis: 100%;
+}
+
+.fight1 img {
+    max-width: 0px;
+}
+
+/*images End  */
+/* main game body End*/
