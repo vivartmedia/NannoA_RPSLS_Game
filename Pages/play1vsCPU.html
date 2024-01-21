@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>VS_CPU Game</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Peralta&display=swap" rel="stylesheet" />
-
     <link rel="stylesheet" href="../styles/style.css" />
 </head>
-
 <body class="gameBody">
     <!-- Navbar start -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">Home</a>
-            <!-- <a class="navbar-brand" href="#">Change Background</a> -->
-            <a class="navbar-brand" href="#">Game Rulles</a>
-
+            <a id="showRulesBtn" class="navbar-brand" href="#">Game Rules</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -33,96 +27,106 @@
     </nav>
     <!-- Navbar end -->
 
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Game Rules</h1>
+            <h5>Here are the rules of the game:
+                <br>- Scissors cuts paper.
+                <br>- Scissors decapitates lizard.
+                <br>- Rock crushes lizard.
+                <br>- Rock crushes scissors.
+                <br>- Paper covers rock.
+                <br>- Paper disproves Spock.
+                <br>- Lizard poisons Spock.
+                <br>- Lizard eats paper.
+                <br>- Spock smashes scissors.
+                <br>- Spock vaporizes rock.
+            </h5>
+            <!-- Add more content as needed -->
+        </div>
+    </div>
 
     <div class="firstDiv">
-        <!-- first Column Start-------------------------------------------------- -->
+        <!-- first Column Start -->
         <div class="secondDiv1">
-
-            <!-- player's Name --------------------------------->
+            <!-- player's Name -->
             <div class="playerNames">
                 <h1>Player</h1>
             </div>
 
-            <!-- 5 images first column Start------------------ -->
+            <!-- 5 images first column Start -->
             <div id="gameDiv">
                 <div class="flex-container">
-                    <img class="rotatable-image" src="../assets/Scissors-fotor-bg-remover-20240116153156.png"
-                        alt="scissors" />
-                    <img class="rotatable-image" src="../assets/Lizard-fotor-bg-remover-20240116152844.png"
-                        alt="lizard" />
+                    <img class="rotatable-image" src="../assets/Scissors-fotor-bg-remover-20240116153156.png" alt="scissors" />
+                    <img class="rotatable-image" src="../assets/Lizard-fotor-bg-remover-20240116152844.png" alt="lizard" />
                     <img class="rotatable-image" src="../assets/Rock-fotor-bg-remover-20240116153112.png" alt="rock" />
                 </div>
                 <div class="flex-container2">
-                    <img class="rotatable-image" src="../assets/Paper-fotor-bg-remover-20240116153013.png"
-                        alt="paper" />
-                    <img class="rotatable-image" src="../assets/'Spock'r-fotor-bg-remover-20240116153333.png"
-                        alt="spock" />
+                    <img class="rotatable-image" src="../assets/Paper-fotor-bg-remover-20240116153013.png" alt="paper" />
+                    <img class="rotatable-image" src="../assets/'Spock'r-fotor-bg-remover-20240116153333.png" alt="spock" />
                 </div>
+                <h3 id="player1Picked">Player</h3>
             </div>
-            <!-- Scores first player Column Start------------------- -->
-            <div class="scores1">
+            <!-- Scores first player Column Start -->
+            <div>
                 <h1>Score:</h1>
             </div>
-            <div class="scores2">
-                <h1>1</h1>
+            <div class="scores1">
+                <h1 id="player1Score"></h1>
             </div>
         </div>
-        <!-- second column ---------------------------------------------------------------------------->
+        <!-- second column -->
         <div class="secondDiv2">
+            <div>
+                <h3 id="GameModeTxt">Choose Game mode!</h3>
+            </div>
             <div class="scores3">
                 <h1 id="winnerResult">Fight</h1>
             </div>
             <div class="content last">
+                <div>   
+                    <button class="resetBtn" id="resetBtn">Reset</button>
+                </div>
                 <div class="h1modesTxt">
                     <h2>Choose modes</h2>
                 </div>
-                
             </div>
         </div>
-
-        <!-- third ---------------------------------------------------------------------------------->
+        <!-- third column -->
         <div class="secondDiv3">
             <div class="playerNames">
                 <h1>vs CPU</h1>
             </div>
             <div id="gameDiv">
                 <div class="flex-container2">
-                    <img class="CPU-image" src="../assets/Scissors-fotor-bg-remover-20240116153156.png"
-                        alt="vsscissors" />
-                    <img class="CPU-image" src="../assets/Lizard-fotor-bg-remover-20240116152844.png"
-                        alt="vslizard" />
-                    <img class="CPU-image" src="../assets/Rock-fotor-bg-remover-20240116153112.png" alt="vsrock" />
+                    <img id="vsscissors" class="CPU-image" src="../assets/Scissors-fotor-bg-remover-20240116153156.png" alt="vsscissors" />
+                    <img id="vslizard" class="CPU-image" src="../assets/Lizard-fotor-bg-remover-20240116152844.png" alt="vslizard" />
+                    <img id="vsrock" class="CPU-image" src="../assets/Rock-fotor-bg-remover-20240116153112.png" alt="vsrock" />
                 </div>
                 <div class="flex-container2">
-                    <img class="CPU-image" src="../assets/Paper-fotor-bg-remover-20240116153013.png"
-                        alt="vspaper" />
-                    <img class="CPU-image" src="../assets/'Spock'r-fotor-bg-remover-20240116153333.png"
-                        alt="vsspock" />
+                    <img id="vspaper" class="CPU-image" src="../assets/Paper-fotor-bg-remover-20240116153013.png" alt="vspaper" />
+                    <img id="vsspock" class="CPU-image" src="../assets/'Spock'r-fotor-bg-remover-20240116153333.png" alt="vsspock" />
                 </div>
+                <h3 id="cpuPicked">CPU</h3>
             </div>
-            <div class="scores1">
+            <div class="">
                 <h1>Score:</h1>
             </div>
-            <div class="scores2">
-                <h1>1</h1>
+            <div class="scores1">
+                <h1 id="cpuScore"></h1>
             </div>
         </div>
     </div>
   
     <div class="modesButtons">
-        <button id="singlePlayBtn" class="item">1 Win</button>
-        <button id="bestOfFiveBtn" class="item">3 out of 5</button>
-        <button id="bestOfSevenBtn" class="item">4 out of 7</button>
+        <div>
+            <button id="singlePlayBtn" class="item">1 Win</button>
+            <button id="bestOfFiveBtn" class="item">3 out of 5</button>
+            <button id="bestOfSevenBtn" class="item">4 out of 7</button>
+        </div>
     </div>
 
-    <!--  5-images text End-->
-
-    <!-- Player's Names start -->
-
-
-    <!-- Player's Names start -->
-
-    <script src="../scripts/intro.js"></script>
+    <script src="../scripts/app.js"></script>
 </body>
-
 </html>
