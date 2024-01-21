@@ -41,13 +41,16 @@ let resetBtn = document.getElementById("resetBtn")
 
 singlePlayBtn.addEventListener("click", function () {
     //  console.log("win 1 clicked");
-    playGame(1);
+  playGame(1);
+  winnerResult.textContent = "Fight";
   });
   bestOfFiveBtn.addEventListener("click", function () {
     playGame(5);
+    winnerResult.textContent = "Fight";
   });
   bestOfSevenBtn.addEventListener("click", function () {
     playGame(7);
+    winnerResult.textContent = "Fight";
   });
 
   let playerWins = 0;
@@ -95,7 +98,7 @@ function activatingImg(e) {
       image.classList.remove("rotatable-image-hover-click");
     });
     winnerResult.textContent =
-      "Please pick one of the 3 game mode buttons bellow";
+      "Please select one of the 3 game mode buttons bellow";
   }
 }
 
@@ -183,8 +186,7 @@ function resetGame() {
   // Reset UI elements
   player1Score.textContent = "Player Wins: 0";
   cpuScore.textContent = "CPU Wins: 0";
-  winnerResult.textContent =
-    "Please pick one of the 3 game mode buttons bellow!";
+  winnerResult.textContent ="Please select one of the 3 game mode buttons bellow!";
   GameModeTxt.textContent = "Select a game Mode";
 
   // Re-enable game mode buttons

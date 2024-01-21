@@ -148,21 +148,17 @@
     min-height: 70vh;
     display: flex;
     flex-direction: column;
-    /* max-width: 100%; */
-    /* justify-content: center; */
     flex-basis: 20%;
-    /* align-items: center; */
-
 }
 
-.scores3 {
 
+.scores3 {
     align-self: center;
     height: 200px;
 }
 
 .scores3 h1 {
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 50px;
 }
 
@@ -180,8 +176,8 @@
     margin-bottom: 30px;
 }
 
-.h1modesTxt {
-    /* justify-self: end; */
+.updatePlayerTurnUI{
+    justify-self: center;
 }
 
 .modesButtons {
