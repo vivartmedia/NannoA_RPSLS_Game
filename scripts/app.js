@@ -109,7 +109,9 @@ function activatingImg(e) {
 
 function GetData() {
   fetch(
-    "https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption"
+    // "https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption"
+        "https://jessierpslsapi.azurewebsites.net/api/RPSLS/RandomCpuChoice"
+        // "https://rpslsapi.azurewebsites.net/RPSLS"
   )
     .then((response) => response.text()) // Process the response as plain text
     .then((data) => {
